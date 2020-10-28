@@ -59,42 +59,47 @@ public class Exercicio_ArrayList {
 				 Pessoa pessoa = new Pessoa(nome); 
 				 agenda.add(pessoa);
 				 String telefone = JOptionPane.showInputDialog("Qual o numero da pessoa?");
-				 int i;
+				 /*int i;
 				 
 				 for (i = 0; i < agenda.size(); i++){
                      if (agenda.get(i).getNome().equals(nome)){
                          agenda.get(i).setTelefone(telefone);
                          break;
                      }
-                 }   
+                 }   */
 				 
 				 
 				break;
 			case 2:
 				String trocatelefone = JOptionPane.showInputDialog("Qual pessoa deseja alterar o número?");
                 String avaliacao = JOptionPane.showInputDialog("Qual o numero?");
-                
+                int i;
                 for (i = 0; i < agenda.size(); i++){
                     if (agenda.get(i).getNome().equals(trocatelefone)){
                         agenda.get(i).setTelefone(avaliacao);
                         break;
                     }
                 }
-                JOptionPane.showMessageDialog(null, i < agenda.size() ? "" : "Música não existe na sua base");                                                   
+                                                                 
 				break;
 			case 3:
-				System.out.println("Deseja consultar os numeros");
-				//System.out.println(lista.get(0, telefone));
-				break;
+				Collections.sort(agenda, Collections.reverseOrder());
+                JOptionPane.showMessageDialog(null, agenda);
+                break;
 			case 4:
-				System.out.println("Deseja realmente excluir o numero?");
-				//lista.remove(nome);
-				//lista.remove(telefone);
+				String delete = JOptionPane.showInputDialog("Qual pessoa voce deseja excluir?");
+       
+                for (i = 0; i < agenda.size(); i++){
+                    if (agenda.get(i).getNome().equals(delete)){
+                        agenda.remove(i);
+                        break;
+                    }
+                }
 				break;
 			case 5:
-				System.out.println("Lista de Contatos");
-				lista.size();
-				break;
+				Collections.sort(agenda, Collections.reverseOrder());
+                JOptionPane.showMessageDialog(null, agenda);
+                break;
 			default:
 				JOptionPane.showMessageDialog(null, "Opção inválida");
                 break;
