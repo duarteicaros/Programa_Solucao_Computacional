@@ -59,24 +59,23 @@ public class Exercicio_ArrayList {
 				 Pessoa pessoa = new Pessoa(nome); 
 				 agenda.add(pessoa);
 				 String telefone = JOptionPane.showInputDialog("Qual o numero da pessoa?");
-				 /*int i;
+				 int i;
 				 
 				 for (i = 0; i < agenda.size(); i++){
                      if (agenda.get(i).getNome().equals(nome)){
                          agenda.get(i).setTelefone(telefone);
                          break;
                      }
-                 }   */
-				 
+                 } 
 				 
 				break;
 			case 2:
 				String trocatelefone = JOptionPane.showInputDialog("Qual pessoa deseja alterar o número?");
-                String avaliacao = JOptionPane.showInputDialog("Qual o numero?");
-                int i;
+                String novonumero = JOptionPane.showInputDialog("Qual o numero?");
+                
                 for (i = 0; i < agenda.size(); i++){
                     if (agenda.get(i).getNome().equals(trocatelefone)){
-                        agenda.get(i).setTelefone(avaliacao);
+                        agenda.get(i).setTelefone(novonumero);
                         break;
                     }
                 }
